@@ -47,22 +47,27 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 
 # Append the PATH update to the appropriate file
 # Check for .bashrc
-if [ -f "$HOME/.bashrc" ]; then
-    echo "Found .bashrc in home directory"
-    echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bashrc
-    source $HOME/.bashrc
+if [ -f "$HOME/.zshenv" ]; then
+  echo "Found .zshenv in home directory"
+  echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.zshenv
+  source $HOME/.zshenv
 else
-    # Check for .bash_profile
-    if [ -f "$HOME/.bash_profile" ]; then
-        echo "Found .bash_profile in home directory"
-        echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bash_profile
-        source $HOME/.bash_profile
-    else
-        # Check for .profile
-        echo "Found .profile in home directory"
-        echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.profile
-        source $HOME/.profile
-    fi
+  if [ -f "$HOME/.bashrc" ]; then
+      echo "Found .bashrc in home directory"
+      echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bashrc
+      source $HOME/.bashrc
+  else
+      # Check for .bash_profile
+      if [ -f "$HOME/.bash_profile" ]; then
+          echo "Found .bash_profile in home directory"
+          echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bash_profile
+          source $HOME/.bash_profile
+      else
+          # Check for .profile
+          echo "Found .profile in home directory"
+          echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.profile
+          source $HOME/.profile
+      fi
 fi
 
 # Clone and set up personal LunarVim configurationg
