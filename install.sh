@@ -31,10 +31,11 @@ rm Anaconda3-latest-Linux-x86_64.sh
 $HOME/anaconda3/bin/conda init bash
 
 # Install a nerdfont (I use 0xProto)
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hermit.zip
-unzip Hermit.zip
-mv Hermit/Hurmit*.otf ~/.local/share/fonts/
-rm -rf Hermit
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/0xProto.zip
+unzip 0xProto.zip
+mv 0xProto/.otf ~/.local/share/fonts/
+rm -rf 0xProto
+rm 0xProto.zip
 
 # Install LunarVim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
