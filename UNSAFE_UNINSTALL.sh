@@ -11,5 +11,4 @@ else
   rm -rf "$HOME/Downloads/instant.lvim"
   bash "$HOME/.local/share/lunarvim/lvim/utils/installer/uninstall.sh"
   rm "$HOME/.bashrc"
-  rm "$HOME/.profile"
 fi
