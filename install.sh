@@ -33,7 +33,7 @@ $HOME/anaconda3/bin/conda init bash
 # Install a nerdfont (I use 0xProto)
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/0xProto.zip
 unzip 0xProto.zip
-mv 0xProto/.otf ~/.local/share/fonts/
+mv 0xProto/0xProto-Regular.ttf ~/.local/share/fonts/
 rm -rf 0xProto
 rm 0xProto.zip
 
