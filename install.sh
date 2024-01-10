@@ -9,7 +9,7 @@ sudo apt install -y git make python3-pip npm nodejs curl wget w3m
 
 # Install Rust via rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source $HOME/.cargo/env
+source ~/.cargo/env
 
 # Install Neovim via AppImage
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -28,7 +28,7 @@ sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 curl -O https://repo.anaconda.com/archive/Anaconda3-latest-Linux-x86_64.sh
 bash Anaconda3-latest-Linux-x86_64.sh -b -p $HOME/anaconda3
 rm Anaconda3-latest-Linux-x86_64.sh
-$HOME/anaconda3/bin/conda init bash
+~/anaconda3/bin/conda init bash
 
 # Install a nerdfont (I use 0xProto)
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/0xProto.zip
