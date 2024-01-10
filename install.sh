@@ -43,7 +43,7 @@ echo "LunarVim will be launched for initial setup now. When it is done, please q
 read -r
 
 # Install and run lunarvim
-LV_BRANCH='release-1.3/neovim-0.9' bash -y <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 # Append the PATH update to the appropriate file
 # Check for .bashrc
