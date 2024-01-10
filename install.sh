@@ -65,9 +65,6 @@ else
     fi
 fi
 
-# Export the lvim binary to the PATH
-# alias lvim="\"$HOME/.local/bin/lvim\""
-
 # Clone and set up personal LunarVim configurationg
 rm -rf $HOME/.config/lvim/*  # first clear default config
 rm -rf $HOME/.config/lvim/.*  # also remove hidden directories which are not removed by the above command (if there happen to be any)
@@ -75,4 +72,4 @@ git clone https://github.com/barnii77/config.lvim.git $HOME/.config/lvim
 cd $HOME/.config/lvim
 
 # Start lvim for for first use and plugins
-lvim config.lua
+$HOME/.local/bin/lvim config.lua
