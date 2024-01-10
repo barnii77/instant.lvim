@@ -9,7 +9,7 @@ sudo apt install -y git make python3-pip npm nodejs curl wget w3m
 
 # Install Rust via rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source ~/.cargo/env
+source $HOME/.cargo/env
 
 # Install Neovim via AppImage
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -28,32 +28,32 @@ sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 curl -O https://repo.anaconda.com/archive/Anaconda3-latest-Linux-x86_64.sh
 bash Anaconda3-latest-Linux-x86_64.sh -b -p $HOME/anaconda3
 rm Anaconda3-latest-Linux-x86_64.sh
-~/anaconda3/bin/conda init bash
+$HOME/anaconda3/bin/conda init bash
 
 # Install a nerdfont (I use 0xProto)
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/0xProto.zip
 unzip 0xProto.zip -d 0xProto
-mv 0xProto/0xProtoNerdFont-Regular.ttf ~/.local/share/fonts/
+mv 0xProto/0xProtoNerdFont-Regular.ttf $HOME/.local/share/fonts/
 rm -rf 0xProto
 rm 0xProto.zip
 
-# Install LunarVim
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-
-# Alias the binany of lvim
-echo "\n\nalias lvim=~/.local/bin/lvim" >> ~/.bashrc
-source ~/.bashrc
-
-# Start lvim for setup
+# Wait for user to read the text saying that installation is not done after the lunarvim finishes it's setup
 clear
 echo "LunarVim will be launched for initial setup now. When it is done, please quit it and dont close the window"
 read -r
-lvim
+
+# Install and run lunarvim
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+echo "\n\nexport PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc
+
+# Alias the binany of lvim
+# echo "\nalias lvim=$HOME/.local/bin/lvim" >> ~/.bashrc
+source $HOME/.bashrc
 
 # Clone and set up personal LunarVim configurationg
-rm -rf ~/.config/lvim/*
-git clone https://github.com/barnii77/config.lvim.git ~/.config/lvim
-cd ~/.config/lvim
+rm -rf $HOME/.config/lvim/*
+git clone https://github.com/barnii77/config.lvim.git $HOME/.config/lvim
+cd $HOME/.config/lvim
 
 # Start lvim for for first use and plugins
 lvim config.lua
