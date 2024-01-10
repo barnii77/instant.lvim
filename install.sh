@@ -38,6 +38,9 @@ echo "\n\nalias lvim=~/.local/bin/lvim" >> ~/.bashrc
 source ~/.bashrc
 
 # Start lvim for setup
+clear
+echo "LunarVim will be launched for initial setup now. When it is done, please quit it and dont close the window"
+pause
 lvim
 
 # Clone and set up personal LunarVim configurationg
