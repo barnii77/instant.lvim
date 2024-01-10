@@ -33,7 +33,7 @@ rm Anaconda3-latest-Linux-x86_64.sh
 # Install a nerdfont (I use 0xProto)
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/0xProto.zip
 unzip 0xProto.zip -d 0xProto
-mv 0xProto/0xProto-Regular.otf ~/.local/share/fonts/
+mv 0xProto/0xProtoNerdFont-Regular.ttf ~/.local/share/fonts/
 rm -rf 0xProto
 rm 0xProto.zip
 
