@@ -49,27 +49,21 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 # Check for .bashrc
 if [ -f "$HOME/.bashrc" ]; then
     echo "Found .bashrc in home directory"
-    echo "\n\nexport PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc
+    echo "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bashrc
 else
-    # Check for .profile
-    if [ -f "$HOME/.profile" ]; then
-        echo "Found .profile in home directory"
-        echo "\n\nexport PATH=$HOME/.local/bin:$PATH" >> $HOME/.profile
+    # Check for .bash_profile
+    if [ -f "$HOME/.bash_profile" ]; then
+        echo "Found .bash_profile in home directory"
+        echo "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bash_profile
     else
-        # Check for .bash_profile
-        if [ -f "$HOME/.bash_profile" ]; then
-            echo "Found .bash_profile in home directory"
-            echo "\n\nexport PATH=$HOME/.local/bin:$PATH" >> $HOME/.bash_profile
-        else
-            # Create a new .profile file
-            echo "Creating new .profile in home directory"
-            echo "PATH=$HOME/.local/bin:$PATH" >> $HOME/.profile
-        fi
+        # Check for .profile
+        echo "Found .profile in home directory"
+        echo "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.profile
     fi
 fi
 
 # Export the lvim binary to the PATH
-export PATH=$HOME/.local/bin:$PATH
+alias lvim="$HOME/.local/bin/lvim"
 
 # Clone and set up personal LunarVim configurationg
 rm -rf $HOME/.config/lvim/*  # first clear default config
