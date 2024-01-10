@@ -78,5 +78,4 @@ git clone https://github.com/barnii77/config.lvim.git $HOME/.config/lvim
 cd $HOME/.config/lvim
 
 # Start lvim for for first use and plugins
-alias lvim=$HOME/.local/bin/lvim
-lvim config.lua
+$HOME/.local/bin/lvim config.lua
