@@ -49,16 +49,16 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 # Check for .bashrc
 if [ -f "$HOME/.bashrc" ]; then
     echo "Found .bashrc in home directory"
-    echo "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bashrc
+    echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bashrc
 else
     # Check for .bash_profile
     if [ -f "$HOME/.bash_profile" ]; then
         echo "Found .bash_profile in home directory"
-        echo "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bash_profile
+        echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bash_profile
     else
         # Check for .profile
         echo "Found .profile in home directory"
-        echo "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.profile
+        echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.profile
     fi
 fi
 
