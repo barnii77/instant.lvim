@@ -5,7 +5,7 @@ read -r -p "Are you really really really sure (last time I will ask this) ? [y/N
 
 if $HOME == "/home/david" || $HOME == "/home/david/" then
   # stop the program so I dont accidentally run this on my own computer
-  echo "David you dummy dumb dumb what in the f*cking hell are you doing?!"
+  echo David you dummy dumb dumb what in the f*cking hell are you doing?!
 else
   rm -rf $HOME/.config/lvim
   rm -rf $HOME/Downloads/instant.lvim
