@@ -44,14 +44,36 @@ read -r
 
 # Install and run lunarvim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-echo "\n\nexport PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc
 
-# Alias the binany of lvim
-# echo "\nalias lvim=$HOME/.local/bin/lvim" >> ~/.bashrc
-source $HOME/.bashrc
+# Append the PATH update to the appropriate file
+# Check for .bashrc
+if [ -f "$HOME/.bashrc" ]; then
+    echo "Found .bashrc in home directory"
+    echo "\n\nexport PATH=$HOME/.local/bin:$PATH" >> $HOME/.bashrc
+else
+    # Check for .profile
+    if [ -f "$HOME/.profile" ]; then
+        echo "Found .profile in home directory"
+        echo "\n\nexport PATH=$HOME/.local/bin:$PATH" >> $HOME/.profile
+    else
+        # Check for .bash_profile
+        if [ -f "$HOME/.bash_profile" ]; then
+            echo "Found .bash_profile in home directory"
+            echo "\n\nexport PATH=$HOME/.local/bin:$PATH" >> $HOME/.bash_profile
+        else
+            # Create a new .profile file
+            echo "Creating new .profile in home directory"
+            echo "PATH=$HOME/.local/bin:$PATH" >> $HOME/.profile
+        fi
+    fi
+fi
+
+# Export the lvim binary to the PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Clone and set up personal LunarVim configurationg
-rm -rf $HOME/.config/lvim/*
+rm -rf $HOME/.config/lvim/*  # first clear default config
+rm -rf $HOME/.config/lvim/.*  # also remove hidden directories which are not removed by the above command (if there happen to be any)
 git clone https://github.com/barnii77/config.lvim.git $HOME/.config/lvim
 cd $HOME/.config/lvim
 
