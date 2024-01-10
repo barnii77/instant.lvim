@@ -38,7 +38,7 @@ echo "\n\nalias lvim=~/.local/bin/lvim" >> ~/.bashrc
 source ~/.bashrc
 
 # Start lvim for setup
-lvim
+lvim config.lua
 
 # Clone and set up personal LunarVim configurationg
 rm -rf ~/.config/lvim/*
