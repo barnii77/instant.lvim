@@ -33,10 +33,17 @@ $HOME/anaconda3/bin/conda init bash
 # Install LunarVim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
-# Clone and set up personal LunarVim configuration
+# Alias the binany of lvim
+echo "\n\nalias lvim=~/.local/bin/lvim" >> ~/.bashrc
+source ~/.bashrc
+
+# Start lvim for setup
+lvim
+
+# Clone and set up personal LunarVim configurationg
+rm -rf ~/.config/lvim/*
 git clone https://github.com/barnii77/config.lvim.git ~/.config/lvim
 cd ~/.config/lvim
-bash ./install.sh
 
-# Start LunarVim
+# Start lvim for for first use and plugins
 lvim
