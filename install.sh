@@ -53,21 +53,22 @@ if [ -f "$HOME/.zshenv" ]; then
   source $HOME/.zshenv
 else
   if [ -f "$HOME/.bashrc" ]; then
-      echo "Found .bashrc in home directory"
-      echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bashrc
-      source $HOME/.bashrc
+    echo "Found .bashrc in home directory"
+    echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bashrc
+    source $HOME/.bashrc
   else
-      # Check for .bash_profile
-      if [ -f "$HOME/.bash_profile" ]; then
-          echo "Found .bash_profile in home directory"
-          echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bash_profile
-          source $HOME/.bash_profile
-      else
-          # Check for .profile
-          echo "Found .profile in home directory"
-          echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.profile
-          source $HOME/.profile
-      fi
+    # Check for .bash_profile
+    if [ -f "$HOME/.bash_profile" ]; then
+      echo "Found .bash_profile in home directory"
+      echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.bash_profile
+      source $HOME/.bash_profile
+    else
+      # Check for .profile
+      echo "Found .profile in home directory"
+      echo -e "\n\nalias lvim=$HOME/.local/bin/lvim" >> $HOME/.profile
+      source $HOME/.profile
+    fi
+  fi
 fi
 
 # Clone and set up personal LunarVim configurationg
