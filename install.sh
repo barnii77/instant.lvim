@@ -30,6 +30,9 @@ bash Anaconda3-latest-Linux-x86_64.sh -b -p $HOME/anaconda3
 rm Anaconda3-latest-Linux-x86_64.sh
 $HOME/anaconda3/bin/conda init bash
 
+# Install pynvim (for some small plugins in my config)
+pip install pynvim
+
 # Install a nerdfont (I use 0xProto)
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/0xProto.zip
 unzip 0xProto.zip -d 0xProto
