@@ -5,7 +5,7 @@ sudo apt update
 sudo apt-get update
 
 # Install prerequisites including wget and w3m using apt
-sudo apt install -y git make python3-pip npm nodejs curl wget w3m
+sudo apt install -y git make python3-pip npm nodejs curl wget w3m clangd
 
 # Install Rust via rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
