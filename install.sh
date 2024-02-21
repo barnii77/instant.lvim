@@ -80,5 +80,28 @@ rm -rf $HOME/.config/lvim/.*  # also remove hidden directories which are not rem
 git clone https://github.com/barnii77/config.lvim.git $HOME/.config/lvim
 cd $HOME/.config/lvim
 
+echo "I have the following mason plugins installed: "
+echo "bash-language-server"
+echo "clang-format"
+echo "clangd"
+echo "codelldb"
+echo "cpplint"
+echo "cpptools"
+echo "debugpy"
+echo "html-lsp"
+echo "jdtls"
+echo "json-lsp"
+echo "lua-language-server"
+echo "ocaml-lsp"
+echo "ocamlformat"
+echo "pydocstyle"
+echo "pylint"
+echo "pyright"
+echo "python-lsp-server"
+echo "reorder-python-imports"
+echo "rust-analyzer"
+echo "tailwindcss-language-server"
+echo "vim-language-server"
+
 # Start lvim for for first use and plugins
 $HOME/.local/bin/lvim $HOME/.config/lvim/config.lua
