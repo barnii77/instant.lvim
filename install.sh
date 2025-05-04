@@ -15,7 +15,7 @@ source $HOME/.cargo/env
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.1/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
 
-./nvim.appimage --appimage-extract
+./nvim-linux-x86_64.appimage --appimage-extract
 
 # Check Neovim version
 ./squashfs-root/AppRun --version
